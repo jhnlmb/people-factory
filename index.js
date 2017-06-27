@@ -5,9 +5,11 @@ const personForm = document.querySelector('#personForm')
 function handleSubmit(ev) {
     ev.preventDefault()
     const f = ev.target
-    const heading = document.querySelector('h1')
-    heading.textContent = f.personName.value + f.personNickname.value
+    const deatils = document.querySelector('#details')
+    const name = f.personName.value + f.personNickname.value
     
+    details.innerHTML = name
+        
 }
 
 
