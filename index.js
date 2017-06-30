@@ -1,6 +1,4 @@
-
 const personForm = document.querySelector('#personForm')
-
 
 function handleSubmit(ev) {
 
@@ -11,20 +9,32 @@ function handleSubmit(ev) {
     const favoriteColor = f.favoriteColor.value
     const age = f.age.value
 
-    const colorDiv = `<div style="background-color: ${favoriteColor}; width: 100px; height: 25px;"></div>`
+    const colorDiv = `
+         <div style="background-color: ${favoriteColor}; width: 100px; height: 25px;"></div>
+        `
    
     // const boldedName = document.createElement('strong')
     // boldedName.textContent = name
 
     // details.appendChild(boldedName)
+    
+    const nameItem = document.createElement('li')
+    nameItem.textContent = `Name: ${name}`
 
-    details.innerHTML = `
-        <ul>
-        <li>Name: ${name}</li>
-        <li>Fav Color: ${colorDiv}</li>
-        <li>Age: ${age}</li>
-        </ul>
-    `
+    const colorItem = document.createElement('li')
+    colorItem.innerHTML = `Favorite Color: ${colorDiv}`
+    
+    const ageItem = document.createElement('li')
+    ageItem.textContent = `Age: ${age}`
+
+    const list = document.createElement('ul')
+    list.appendChild(nameItem)
+    list.appendChild(colorItem)
+    list.appendChild(ageItem)
+
+    details.appendChild(list)
+
+    
 }
 
 
